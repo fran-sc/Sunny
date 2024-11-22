@@ -2,7 +2,7 @@
 
 ### Programación y Motores de Videojuegos
 
-#### Project: Asteroids
+#### Project: Sunny
 
 `[Unity ver.: 6.0.28f1]`
 
