@@ -9,7 +9,7 @@ public class Parallax : MonoBehaviour
 
     void Start()
     {
-        mat = GetComponent<SpriteRenderer>().material;
+        mat = GetComponent<Renderer>().material;
         
         cam = Camera.main.transform;
 
