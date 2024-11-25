@@ -38,6 +38,14 @@
 
 </center>
 
+### Mapa
+
+<center>
+
+![Mapa](Docs/map.png)
+
+</center>
+
 ### Mecánicas
 
 - El jugador maneja su personaje en cualquier dirección, sin poder abandonar la zona de juego.
