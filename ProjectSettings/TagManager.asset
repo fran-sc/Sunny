@@ -15,7 +15,7 @@ TagManager:
   - Deco
   - Platforms
   - Traps
-  - 
+  - Player
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: Traps
     uniqueID: 1402444607
+    locked: 0
+  - name: Player
+    uniqueID: 857275927
     locked: 0
   m_RenderingLayers:
   - Default
