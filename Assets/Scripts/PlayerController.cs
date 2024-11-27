@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float jumpSpeed;
+    
     Rigidbody2D rb;
     Collider2D col;
+    Animator anim;
 
     float moveX;
     bool jump;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -36,8 +39,12 @@ public class PlayerController : MonoBehaviour
 
     void Run()
     {
+        // calculamos la velocidad en el eje X
         Vector2 vel = new Vector2(moveX * speed * Time.fixedDeltaTime, rb.linearVelocityY);
         rb.linearVelocity = vel;
+
+        // establecemos la animación de correr
+        anim.SetBool("isRunning", Math.Abs(rb.linearVelocity.x) > Mathf.Epsilon);
     }
 
     void Flip()
@@ -60,5 +67,8 @@ public class PlayerController : MonoBehaviour
         if (!col.IsTouchingLayers(mask)) return;
         
         rb.linearVelocityY += jumpSpeed;
+
+        // establecemos la animación de saltar
+        anim.SetTrigger("isJumping");
     }
 }
