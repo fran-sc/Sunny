@@ -30,26 +30,26 @@ public class PlayerInteractions : MonoBehaviour
 
     IEnumerator DieAndReborn()
     {
+        // Eliminar la velocidad del jugador
         rb.linearVelocity = Vector2.zero;
         
+        // Activar la animación de morir
         anim.SetTrigger("die");
         
+        // Desactivar el seguimiento de cámara
         followCamera.Follow = null;
 
+        // Aplicar una fuerza para la simulación de la muerte
         rb.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
         col.enabled = false;
 
+        // Esperar unos segundos
         yield return new WaitForSeconds(3f);
         
+        // Reaparecer al jugador en la posición inicial y activar el seguimiento de cámara
         anim.SetTrigger("reborn");
         col.enabled = true;
         transform.position = initialPosition;
         followCamera.Follow = transform;
-
-        /*
-        followCamera.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        followCamera.enabled = true;
-        */
     }
 }
