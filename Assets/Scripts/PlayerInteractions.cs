@@ -22,7 +22,7 @@ public class PlayerInteractions : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Traps"))
+        if (collision.gameObject.CompareTag("Trap"))
         {
             StartCoroutine(DieAndReborn());
         }

@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Traps
+  - Trap
+  - Gem
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Traps
   - Player
   - Background
-  - 
+  - Items
   - 
   - 
   - 
